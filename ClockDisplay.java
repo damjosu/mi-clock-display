@@ -16,17 +16,17 @@ public class ClockDisplay
         minute = new NumberDisplay(60);
         currentTime = hour.getDisplayValue() + ":" + minute.getDisplayValue();
     }
-    
+
     /**
      * Initialize the clock to the given time.
      */
     public ClockDisplay(int newHour, int newMinute)
     {
-       hour = new NumberDisplay(24);
-       minute = new NumberDisplay(60);
-       hour.setValue(newHour);
-       minute.setValue(newMinute);
-       currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+        hour = new NumberDisplay(24);
+        minute = new NumberDisplay(60);
+        hour.setValue(newHour);
+        minute.setValue(newMinute);
+        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
     }
 
     /**
@@ -34,11 +34,11 @@ public class ClockDisplay
      */
     public void setTime(int newHour, int newMinute)
     {
-       hour.setValue(newHour);
-       minute.setValue(newMinute);
-       currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+        hour.setValue(newHour);
+        minute.setValue(newMinute);
+        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
     }
-    
+
     /**
      * Returns the Time in 24h format.
      */
@@ -46,4 +46,17 @@ public class ClockDisplay
     {
         return currentTime;
     }
+
+    /**
+     * Sets the time 1 minute forward.
+     */
+    public void timeTick()
+    {
+        minute.increment();
+        if (minute.getDisplayValue().equals("00"))
+        {
+            hour.increment();
+        }
+        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+    } 
 }    
