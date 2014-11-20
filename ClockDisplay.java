@@ -14,7 +14,7 @@ public class ClockDisplay
     {
         hour = new NumberDisplay(24);
         minute = new NumberDisplay(60);
-        currentTime = hour.getDisplayValue() + ":" + minute.getDisplayValue();
+        updateDisplay();
     }
 
     /**
@@ -26,7 +26,7 @@ public class ClockDisplay
         minute = new NumberDisplay(60);
         hour.setValue(newHour);
         minute.setValue(newMinute);
-        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+        updateDisplay();
     }
 
     /**
@@ -36,7 +36,7 @@ public class ClockDisplay
     {
         hour.setValue(newHour);
         minute.setValue(newMinute);
-        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+        updateDisplay();
     }
 
     /**
@@ -57,6 +57,21 @@ public class ClockDisplay
         {
             hour.increment();
         }
-        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+        updateDisplay();
     } 
+    
+    /**
+     * Updates the current time.
+     */
+    private void updateDisplay()
+    {
+        if (hour.getValue() > 12) {
+            int newHour = hour.getValue() - 12;
+            currentTime = newHour + ":" +  minute.getDisplayValue() + " p.m.";
+        }
+        else {
+            currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue() + " a.m.";
+        }    
+        
+    }   
 }    
