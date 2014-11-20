@@ -38,4 +38,12 @@ public class ClockDisplay
        minute.setValue(newMinute);
        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
     }
+    
+    /**
+     * Returns the Time in 24h format.
+     */
+    public String getTime()
+    {
+        return currentTime;
+    }
 }    
