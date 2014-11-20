@@ -29,4 +29,13 @@ public class ClockDisplay
        currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
     }
 
+    /**
+     * Sets the clock to the given hour and minute.
+     */
+    public void setTime(int newHour, int newMinute)
+    {
+       hour.setValue(newHour);
+       minute.setValue(newMinute);
+       currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue();
+    }
 }    
