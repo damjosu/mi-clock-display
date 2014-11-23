@@ -1,19 +1,28 @@
 public class ClockDisplay
 {
-    // The hours.
+    //The hours.
     private NumberDisplay hour;
-    // The minutes.
+    //The minutes.
     private NumberDisplay minute;
-    // The current time.
+    //The current time.
     private String currentTime;
+    //The current year
+    private NumberDisplay year;
+    //The current month;
+    private NumberDisplay month;
+    //The current day;
+    private NumberDisplay day;
 
     /**
-     * Initialize the clock to 00:00
+     * Initialize the clock to 00:00a.m. 00/00/00
      */
     public ClockDisplay()
     {
         hour = new NumberDisplay(24);
         minute = new NumberDisplay(60);
+        year = new NumberDisplay(2999);
+        month = new NumberDisplay(13);
+        day = new NumberDisplay(31);
         updateDisplay();
     }
 
@@ -67,10 +76,10 @@ public class ClockDisplay
     {
         if (hour.getValue() > 12) {
             int newHour = hour.getValue() - 12;
-            currentTime = newHour + ":" +  minute.getDisplayValue() + " p.m.";
+            currentTime = newHour + ":" +  minute.getDisplayValue() + "p.m. " + day.getDisplayValue() + "/" + month.getDisplayValue() + "/" + year.getDisplayValue();
         }
         else {
-            currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue() + " a.m.";
+            currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue() + "a.m. " + day.getDisplayValue() + "/" + month.getDisplayValue() + "/" + year.getDisplayValue();
         }    
         
     }   

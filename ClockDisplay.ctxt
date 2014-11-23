@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ClockDisplay()
-comment0.text=\r\n\ Initialize\ the\ clock\ to\ 00\:00\r\n
+comment0.text=\r\n\ Initialize\ the\ clock\ to\ 00\:00a.m.\ 00/00/00\r\n
 comment1.params=newHour\ newMinute
 comment1.target=ClockDisplay(int,\ int)
 comment1.text=\r\n\ Initialize\ the\ clock\ to\ the\ given\ time.\r\n
