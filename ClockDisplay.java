@@ -68,11 +68,22 @@ public class ClockDisplay
     public void timeTick()
     {
         minute.increment();
-        if (minute.getDisplayValue().equals("00"))
-        {
+        if (minute.getValue() == 0) {
             hour.increment();
+            if (hour.getValue() == 0) {
+                day.increment();
+                if (day.getValue() == 0) {
+                    day.increment();
+                    month.increment();
+                    if (month.getValue() == 0) {
+                        month.increment();
+                        year.increment();
+                    }
+                }
+            }
         }
         updateDisplay();
+    
     } 
     
     /**
