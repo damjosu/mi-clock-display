@@ -29,17 +29,23 @@ public class ClockDisplay
     /**
      * Initialize the clock to the given time.
      */
-    public ClockDisplay(int newHour, int newMinute)
+    public ClockDisplay(int newHour, int newMinute, int newDay, int newMonth, int newYear)
     {
         hour = new NumberDisplay(24);
         minute = new NumberDisplay(60);
+        year = new NumberDisplay(2999);
+        month = new NumberDisplay(13);
+        day = new NumberDisplay(31);        
         hour.setValue(newHour);
         minute.setValue(newMinute);
+        day.setValue(newDay);
+        month.setValue(newMonth);
+        year.setValue(newYear);        
         updateDisplay();
     }
 
     /**
-     * Sets the clock to the given hour and minute.
+     * Sets the clock to the given hour, minute, day, month and year.
      */
     public void setTime(int newHour, int newMinute)
     {

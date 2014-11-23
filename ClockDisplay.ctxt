@@ -2,12 +2,12 @@
 comment0.params=
 comment0.target=ClockDisplay()
 comment0.text=\r\n\ Initialize\ the\ clock\ to\ 00\:00a.m.\ 00/00/00\r\n
-comment1.params=newHour\ newMinute
-comment1.target=ClockDisplay(int,\ int)
+comment1.params=newHour\ newMinute\ newDay\ newMonth\ newYear
+comment1.target=ClockDisplay(int,\ int,\ int,\ int,\ int)
 comment1.text=\r\n\ Initialize\ the\ clock\ to\ the\ given\ time.\r\n
 comment2.params=newHour\ newMinute
 comment2.target=void\ setTime(int,\ int)
-comment2.text=\r\n\ Sets\ the\ clock\ to\ the\ given\ hour\ and\ minute.\r\n
+comment2.text=\r\n\ Sets\ the\ clock\ to\ the\ given\ hour,\ minute,\ day,\ month\ and\ year.\r\n
 comment3.params=
 comment3.target=java.lang.String\ getTime()
 comment3.text=\r\n\ Returns\ the\ Time\ in\ 24h\ format.\r\n
