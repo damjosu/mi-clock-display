@@ -47,10 +47,13 @@ public class ClockDisplay
     /**
      * Sets the clock to the given hour, minute, day, month and year.
      */
-    public void setTime(int newHour, int newMinute)
+    public void setTime(int newHour, int newMinute, int newDay, int newMonth, int newYear)
     {
         hour.setValue(newHour);
         minute.setValue(newMinute);
+        day.setValue(newDay);
+        month.setValue(newMonth);
+        year.setValue(newYear);
         updateDisplay();
     }
 
@@ -82,8 +85,7 @@ public class ClockDisplay
                 }
             }
         }
-        updateDisplay();
-    
+        updateDisplay();    
     } 
     
     /**
@@ -98,6 +100,5 @@ public class ClockDisplay
         else {
             currentTime = hour.getDisplayValue() + ":" +  minute.getDisplayValue() + "a.m. " + day.getDisplayValue() + "/" + month.getDisplayValue() + "/" + year.getDisplayValue();
         }    
-        
     }   
 }    
